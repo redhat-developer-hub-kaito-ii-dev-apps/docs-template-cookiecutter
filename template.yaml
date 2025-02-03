@@ -74,7 +74,9 @@ spec:
           - github.com
         description: This is ${{ parameters.name }}
         repoUrl: ${{ parameters.repoUrl }}
-        access: ${{ (parameters.owner } | parseEntityRef).namespace + '/' +  (parameters.owner } | parseEntityRef).name }}
+        collaborators:
+          - team: ${{ (parameters.owner | parseEntityRef).name }}
+            access: admin
 
     - id: register
       name: Register
