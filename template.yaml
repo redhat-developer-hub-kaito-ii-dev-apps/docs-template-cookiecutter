@@ -17,6 +17,7 @@ spec:
       required:
         - name
         - description
+        - repoUrl
       properties:
         name:
           title: Name
@@ -39,10 +40,6 @@ spec:
           ui:options:
             allowedKinds:
               - Group
-    - title: Choose a location
-      required:
-        - repoUrl
-      properties:
         repoUrl:
           title: Repository Location
           type: string
