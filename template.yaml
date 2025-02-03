@@ -1,13 +1,12 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: docs-template-cookiecutter
-  title: Documentation Template (Cookiecutter)
-  description: Create a new standalone documentation project using Cookiecutter
+  name: docs-template
+  title: Documentation Template
+  description: Create a new standalone documentation project using Template
   tags:
     - techdocs
     - mkdocs
-    - cookiecutter
 spec:
   owner: backstage/techdocs-core
   type: documentation
