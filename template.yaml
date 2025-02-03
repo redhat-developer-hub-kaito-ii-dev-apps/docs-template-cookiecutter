@@ -74,6 +74,7 @@ spec:
           - github.com
         description: This is ${{ parameters.name }}
         repoUrl: ${{ parameters.repoUrl }}
+        access: ${{ parameters.owner }} 
 
     - id: register
       name: Register
