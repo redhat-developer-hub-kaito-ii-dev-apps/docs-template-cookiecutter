@@ -17,7 +17,6 @@ spec:
       required:
         - name
         - description
-        - repoUrl
       properties:
         name:
           title: Name
@@ -40,13 +39,27 @@ spec:
           ui:options:
             allowedKinds:
               - Group
-        repoUrl:
+    - title: Choose a location
+      required:
+        - repoUrl
+      properties:
+         repoUrl:
           title: Repository Location
           type: string
           ui:field: RepoUrlPicker
           ui:options:
             allowedHosts:
               - github.com
+            allowedOwners:
+              - team
+          team:
+            title: Team
+            type: string
+            ui:field: EntityPicker
+            ui:options:
+              catalogFilter:
+                - kind: Group
+                  spec.type: team
 
   # This template can be used on top of an existing software template to add docs.
   # By adding the following and fetching from an absolute URL you can
@@ -71,7 +84,7 @@ spec:
           - github.com
         description: This is ${{ parameters.name }}
         repoUrl: ${{ parameters.repoUrl }}
-        access: ${{ parameters.owner }} 
+        access: ${{ parameters.owner }}
 
     - id: register
       name: Register
